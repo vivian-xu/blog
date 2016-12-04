@@ -1,0 +1,20 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "blog hexo next",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "move": "cp -Rf blog_init/public/* ../vivian-xu.github.io/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vivian-xu/blog.git"
+  },
+  "author": "vivian-xu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vivian-xu/blog/issues"
+  },
+  "homepage": "https://github.com/vivian-xu/blog#readme"
+}

@@ -1,0 +1,938 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/blog/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/blog/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/blog/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="记录," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/blog/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="hexo 试用搭建过程
+安装 hexo
+  $ npm install -g hexo-cli
+
+随便建一个目录
+  mkdir hexo_test
+
+初始化文件夹 ( 在hexo_test 外面 )
+  hexo init hexo_test
+
+进入 hexo_test
+  cd hexo_test
+
+npm 初始化
+  npm install
+
+然后就可以看到有许多文件夹
+
+
+
+
+
+文件夹名">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hexo 搭建过程">
+<meta property="og:url" content="http://zhangxiaoxu.com/2016/12/02/test-hexo/index.html">
+<meta property="og:site_name" content="Vivian blog">
+<meta property="og:description" content="hexo 试用搭建过程
+安装 hexo
+  $ npm install -g hexo-cli
+
+随便建一个目录
+  mkdir hexo_test
+
+初始化文件夹 ( 在hexo_test 外面 )
+  hexo init hexo_test
+
+进入 hexo_test
+  cd hexo_test
+
+npm 初始化
+  npm install
+
+然后就可以看到有许多文件夹
+
+
+
+
+
+文件夹名">
+<meta property="og:updated_time" content="2016-12-03T10:47:21.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="hexo 搭建过程">
+<meta name="twitter:description" content="hexo 试用搭建过程
+安装 hexo
+  $ npm install -g hexo-cli
+
+随便建一个目录
+  mkdir hexo_test
+
+初始化文件夹 ( 在hexo_test 外面 )
+  hexo init hexo_test
+
+进入 hexo_test
+  cd hexo_test
+
+npm 初始化
+  npm install
+
+然后就可以看到有许多文件夹
+
+
+
+
+
+文件夹名">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/blog/',
+    scheme: 'Muse',
+    sidebar: {"position":"right","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://zhangxiaoxu.com/2016/12/02/test-hexo/"/>
+
+
+
+
+
+  <title> hexo 搭建过程 | Vivian blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/blog/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Vivian blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/blog/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/blog/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/blog/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/blog/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/blog/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://zhangxiaoxu.com/blog/2016/12/02/test-hexo/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Vivian">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/blog/images/avatar.gif">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Vivian blog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Vivian blog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                hexo 搭建过程
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-02T23:24:51+08:00">
+                2016-12-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/programming/" itemprop="url" rel="index">
+                    <span itemprop="name">编程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="hexo-试用搭建过程"><a href="#hexo-试用搭建过程" class="headerlink" title="hexo 试用搭建过程"></a>hexo 试用搭建过程</h3><ul>
+<li><p>安装 hexo</p>
+<p>  $ npm install -g hexo-cli</p>
+</li>
+<li><p>随便建一个目录</p>
+<p>  mkdir hexo_test</p>
+</li>
+<li><p>初始化文件夹 ( 在hexo_test 外面 )</p>
+<p>  hexo init hexo_test</p>
+</li>
+<li><p>进入 hexo_test</p>
+<p>  cd hexo_test</p>
+</li>
+<li><p>npm 初始化</p>
+<p>  npm install</p>
+</li>
+<li><p>然后就可以看到有许多文件夹</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>文件夹名</th>
+<th>文件夹用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>_config.yml</td>
+<td>配置文件</td>
+</tr>
+<tr>
+<td>package.json</td>
+<td>node 开发环境的配置文件</td>
+</tr>
+<tr>
+<td>scaffolds</td>
+<td>模版文件夹。当您新建文章时，Hexo 会根据 scaffold 来建立文件。</td>
+</tr>
+<tr>
+<td>source</td>
+<td>资源文件夹是存放用户资源的地方。除 <em>posts 文件夹之外，开头命名为 </em> (下划线)的文件 / 文件夹和隐藏的文件将会被忽略。Markdown 和 HTML 文件会被解析并放到 public 文件夹，而其他文件会被拷贝过去。</td>
+</tr>
+<tr>
+<td>public / _drafts</td>
+<td>草稿</td>
+</tr>
+<tr>
+<td>public / _posts</td>
+<td>je</td>
+</tr>
+<tr>
+<td>themes</td>
+<td>主题 文件夹。Hexo 会根据主题来生成静态页面。</td>
+</tr>
+</tbody>
+</table>
+<a id="more"></a>
+<ul>
+<li><p>生成静态页面</p>
+<ul>
+<li><p>hexo generate（hexo g也可以）</p>
+</li>
+<li><p>在 public 某个目录里( 默认是现在的时间) 有一个新生成的 yourpostname.html 文件。</p>
+</li>
+</ul>
+</li>
+<li><p>启动本地服务，进行文章预览调试</p>
+<p>  hexo server</p>
+</li>
+<li><p>打开 <a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a></p>
+</li>
+<li><p>注意 ！ 这里我有个错误提示</p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;[Error: Cannot find module <span class="string">'./build/Release/DTraceProviderBindings'</span>] code: <span class="string">'MODULE_NOT_FOUND'</span> &#125;</div><div class="line">&#123;[Error: Cannot find module <span class="string">'./build/default/DTraceProviderBindings'</span>] code: <span class="string">'MODULE_NOT_FOUND'</span> &#125;</div><div class="line">&#123;[Error: Cannot find module <span class="string">'./build/Debug/DTraceProviderBindings'</span>] code: <span class="string">'MODULE_NOT_FOUND'</span> &#125;</div></pre></td></tr></table></figure>
+<p>先查到用这个 npm install hexo –no-optional,<br>但是对我没用，</p>
+<h3 id="还未解决"><a href="#还未解决" class="headerlink" title="(还未解决)"></a>(还未解决)</h3><ul>
+<li><p>新添加一篇 post</p>
+<ul>
+<li><p>hexo new “Hey”</p>
+</li>
+<li><p>在 hexo_test/source/_post 中生成 一个为 Hey.md 的文件。</p>
+</li>
+</ul>
+</li>
+<li><p>如果你没有起 server 的话，可能需要执行 hexo generate 来生成静态页面</p>
+</li>
+<li><p>再去刷新一下页面，发现页面上新增了 Hey 这个 post，但是没有内容。</p>
+</li>
+<li><p>进入source/_post/Hey.md 你就可以编辑这篇文章的内容了</p>
+<ul>
+<li>然后保存， 你就可以在网页中看到你文章的内容了</li>
+</ul>
+</li>
+</ul>
+<h3 id="部署到-github-上"><a href="#部署到-github-上" class="headerlink" title="部署到 github 上"></a>部署到 github 上</h3><ul>
+<li><p>在根目录下找到 _config.yml 文件, 并打开</p>
+</li>
+<li><p>找到 这部分(在最后)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"># Deployment</div><div class="line">## Docs: https://hexo.io/docs/deployment.html</div><div class="line">deploy:</div><div class="line">  type:</div></pre></td></tr></table></figure>
+</li>
+<li><p>修改上述地方</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"># Deployment</div><div class="line">## Docs: https://hexo.io/docs/deployment.html</div><div class="line">deploy:</div><div class="line">  type: git</div><div class="line">  repository: git@github.com:vivian-xu/vivian-xu.github.io.git</div><div class="line">  branch: master</div></pre></td></tr></table></figure>
+<h5 id="注意"><a href="#注意" class="headerlink" title="注意!"></a>注意!</h5><ul>
+<li><p>repository：必须是SSH形式的url (如上)，而不能是HTTPS形式的url（<a href="https://github.com/***/***.github.io.git），" target="_blank" rel="external">https://github.com/***/***.github.io.git），</a></p>
+</li>
+<li><p>如果你使用SSH url，但是电脑没有开放SSH 端口，会致部署失败。</p>
+</li>
+<li><p>3.0 以上 type: git</p>
+</li>
+<li><p>如果你是为一个项目制作网站，那么需要把branch设置为gh-pages。</p>
+</li>
+</ul>
+<h4 id="看到-上面那一条，我想着自己本来-vivian-xu-github-io-有自己以前放的简历，于是我将-branch-改成了-gh-page"><a href="#看到-上面那一条，我想着自己本来-vivian-xu-github-io-有自己以前放的简历，于是我将-branch-改成了-gh-page" class="headerlink" title="看到 上面那一条，我想着自己本来 vivian-xu.github.io 有自己以前放的简历，于是我将 branch 改成了 gh-page ."></a>看到 上面那一条，我想着自己本来 vivian-xu.github.io 有自己以前放的简历，于是我将 branch 改成了 <strong>gh-page .</strong></h4><ul>
+<li><p>然后 hexo deploy</p>
+<h5 id="报错-ERROR-Deployer-not-found-git"><a href="#报错-ERROR-Deployer-not-found-git" class="headerlink" title="报错 ERROR Deployer not found: git"></a>报错 ERROR Deployer not found: git</h5><p> 解决方法： npm install hexo-deployer-git –save //将git替换为别的名字就可以安装对应模块</p>
+<ul>
+<li><p>hexo deploy  成功！</p>
+</li>
+<li><p>然后我去 github 我的 vivian-xu.github.io.git 的仓库里切换了，分支看了一下，有传进来的！</p>
+</li>
+<li><p>然后我去访问 vivian-xu.github.io.git/hexo_test/</p>
+<p>结果 404 ….</p>
+<p>我想着可能有延迟， 不停的刷新，不停的 404..</p>
+<p>于是我在网上找啊找啊，先是找 gh-pages 相关，但是没解决我问题，</p>
+<p>我期间试了好几次，还是 404,  我到  git 仓库里，看着我的 gh-pages 分支，疑惑，东西都在，怎么能访问不了。</p>
+<p>不过，我有些怀疑所说的 gh-pages 名字是我建的 文件夹名么。。。 我的文件夹在本地，而且文件夹名没有一起更新到 github 的 vivian-xu.github.io 的 gh-pages 中，github 怎么会知道我的文件夹名。。</p>
+<p>于是我在 hexo 的 issue 里搜，</p>
+<p>终于 在一个长长的<a href="https://github.com/hexojs/hexo/issues/350" target="_blank" rel="external">这个issue</a> 回答中看到这个回答</p>
+<p><em>yourname.github.io形式的库，会解析master分支；而别的名字的库，会解析gh-pages分支，以yourname.github.io/库名的形式访问。 </em></p>
+<p>更加让我觉得是名字的问题</p>
+<p>于是，我重新建了一个库， hexo_test,</p>
+<p>然后把 _config.yml 文件改了</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">type: git</div><div class="line">repository: git@github.com:vivian-xu/hexo_test.git // 新库地址</div><div class="line">branch: gh-pages</div></pre></td></tr></table></figure>
+<ul>
+<li>然后 hexo deploy -g 成功！看了下 git 的仓库 的确有传进去</li>
+<li>于是兴冲冲的打开 vivian-xu.github.io/hexo_test/   耶！不再是 404 了！ 但是。。为什么没有样式。。</li>
+<li>打开 chorme 的调试工具，发现 css js 的路径都不对<br>是类似这样的 <a href="https://vivian-xu.github.io/fancybox/jquery.fancybox.css" target="_blank" rel="external">https://vivian-xu.github.io/fancybox/jquery.fancybox.css</a></li>
+</ul>
+<p>应该是 <a href="https://vivian-xu.github.io/hexo_test/***" target="_blank" rel="external">https://vivian-xu.github.io/hexo_test/***</a> 才对，于是又去看了 issue</p>
+<p>看到这个 <a href="https://github.com/hexojs/hexo/issues/1121" target="_blank" rel="external">https://github.com/hexojs/hexo/issues/1121</a></p>
+<p>意识到自己可能要配 root ( 自己的网站还要配 CNAME )</p>
+<p> 然后 _config.yml</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">url: http://yoursite.com</div><div class="line">root: /hexo_test/</div><div class="line">permalink: :year/:month/:day/:title/</div><div class="line">permalink_defaults:</div></pre></td></tr></table></figure>
+</li>
+<li><p>再次 hexo g -d ，打开页面 终于成功了！！</p>
+</li>
+</ul>
+<p>现在是这个样子</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div></pre></td><td class="code"><pre><div class="line"># Hexo Configuration</div><div class="line">## Docs: https://hexo.io/docs/configuration.html</div><div class="line">## Source: https://github.com/hexojs/hexo/</div><div class="line"></div><div class="line"># Site 站点</div><div class="line">title: Vivian</div><div class="line">subtitle:</div><div class="line">description: Vvian&apos;s blog</div><div class="line">keywords:</div><div class="line">  - HTML</div><div class="line">  - JavaScript</div><div class="line">  - CSS</div><div class="line">  - React</div><div class="line">author: Vivian</div><div class="line">language: zh-CN #语言</div><div class="line">timezone: Asia/Shanghai #时区</div><div class="line"></div><div class="line"># URL</div><div class="line">## If your site is put in a subdirectory, set url as &apos;http://yoursite.com/child&apos; and root as &apos;/child/&apos;</div><div class="line">url: http://yoursite.com #用于绑定域名, 其他的不需要配置</div><div class="line">root: /hexo_test/</div><div class="line">permalink: :year/:month/:day/:title/</div><div class="line">permalink_defaults:</div><div class="line"></div><div class="line"># Directory</div><div class="line">source_dir: source</div><div class="line">public_dir: public</div><div class="line">tag_dir: tags #标签</div><div class="line">archive_dir: archives  #归档</div><div class="line">category_dir: categories #分类</div><div class="line">code_dir: downloads/code</div><div class="line">i18n_dir: :lang</div><div class="line">skip_render:</div><div class="line"></div><div class="line"># Writing</div><div class="line">new_post_name: :title.md # File name of new posts</div><div class="line">default_layout: post #默认模板(post page photo draft)</div><div class="line">titlecase: false # Transform title into titlecase  #标题转换成大写</div><div class="line">external_link: true # Open external links in new tab #新标签页里打开连接</div><div class="line">filename_case: 0</div><div class="line">render_drafts: false</div><div class="line">post_asset_folder: false</div><div class="line">relative_link: false</div><div class="line">future: true</div><div class="line">highlight:  #语法高亮</div><div class="line">  enable: true</div><div class="line">  line_number: true #显示行号</div><div class="line">  auto_detect: false</div><div class="line">  tab_replace:</div><div class="line"></div><div class="line"># Category &amp; Tag</div><div class="line">default_category: uncategorized #默认分类</div><div class="line">category_map:</div><div class="line">tag_map:</div><div class="line"></div><div class="line"># Date / Time format</div><div class="line">## Hexo uses Moment.js to parse and display date</div><div class="line">## You can customize the date format as defined in</div><div class="line">## http://momentjs.com/docs/#/displaying/format/</div><div class="line">date_format: YYYY-MM-DD</div><div class="line">time_format: HH:mm:ss</div><div class="line"></div><div class="line"># Pagination</div><div class="line">## Set per_page to 0 to disable pagination</div><div class="line">per_page: 10</div><div class="line">pagination_dir: page</div><div class="line"></div><div class="line"># Extensions</div><div class="line">## Plugins: https://hexo.io/plugins/</div><div class="line">## Themes: https://hexo.io/themes/</div><div class="line">theme: landscape</div><div class="line"># theme: ninja</div><div class="line"></div><div class="line"># Deployment</div><div class="line">## Docs: https://hexo.io/docs/deployment.html</div><div class="line">deploy:</div><div class="line">  type: git</div><div class="line">  # repository: git@github.com:vivian-xu/vivian-xu.github.io.git</div><div class="line">  repository: git@github.com:vivian-xu/blog.git</div><div class="line">  branch: gh-pages</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="theme-主题"><a href="#theme-主题" class="headerlink" title="theme 主题"></a>theme 主题</h4><ul>
+<li>挑选一个喜欢的 theme, git clone theme/  主题 git 库的链接</li>
+</ul>
+<h4 id="hexo-指令总汇"><a href="#hexo-指令总汇" class="headerlink" title="hexo 指令总汇"></a>hexo 指令总汇</h4><table>
+<thead>
+<tr>
+<th>指令</th>
+<th>简写</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>hexo new “postName”</td>
+<td>hexo n “postName”</td>
+<td>#新建文章</td>
+</tr>
+<tr>
+<td>hexo new page “pageName”</td>
+<td>hexo n  page “postName”</td>
+<td>#新建页面</td>
+</tr>
+<tr>
+<td>hexo generate</td>
+<td>hexo g</td>
+<td>#生成静态页面至public目录</td>
+</tr>
+<tr>
+<td>hexo server</td>
+<td>hexo s</td>
+<td>#开启预览访问端口（默认端口4000，’ctrl + c’关闭server）</td>
+</tr>
+<tr>
+<td>hexo deploy</td>
+<td>hexo d</td>
+<td>#将.deploy目录部署到GitHub</td>
+</tr>
+<tr>
+<td>hexo help</td>
+<td>\</td>
+<td># 查看帮助</td>
+</tr>
+<tr>
+<td>hexo version</td>
+<td>\</td>
+<td>#查看Hexo的版本</td>
+</tr>
+</tbody>
+</table>
+<p>参考 :</p>
+<p><a href="https://xuanwo.org/2014/08/14/hexo-usual-problem/#Deploy之后，页面长时间404" target="_blank" rel="external">Hexo常见问题解决方案</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/blog/tags/记录/" rel="tag"># 记录</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/2016/12/02/Web-storage/" rel="next" title="Web 存储">
+                <i class="fa fa-chevron-left"></i> Web 存储
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/blog/images/avatar.gif"
+               alt="Vivian" />
+          <p class="site-author-name" itemprop="name">Vivian</p>
+          <p class="site-description motion-element" itemprop="description">记录，记录，记录！！！</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/blog/archives">
+              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/blog/categories">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/blog/tags">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/vivian-xu" target="_blank" title="github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  github
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo-试用搭建过程"><span class="nav-number">1.</span> <span class="nav-text">hexo 试用搭建过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#还未解决"><span class="nav-number">2.</span> <span class="nav-text">(还未解决)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#部署到-github-上"><span class="nav-number">3.</span> <span class="nav-text">部署到 github 上</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#注意"><span class="nav-number">3.0.1.</span> <span class="nav-text">注意!</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#看到-上面那一条，我想着自己本来-vivian-xu-github-io-有自己以前放的简历，于是我将-branch-改成了-gh-page"><span class="nav-number">3.1.</span> <span class="nav-text">看到 上面那一条，我想着自己本来 vivian-xu.github.io 有自己以前放的简历，于是我将 branch 改成了 gh-page .</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#报错-ERROR-Deployer-not-found-git"><span class="nav-number">3.1.1.</span> <span class="nav-text">报错 ERROR Deployer not found: git</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#theme-主题"><span class="nav-number">3.2.</span> <span class="nav-text">theme 主题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#hexo-指令总汇"><span class="nav-number">3.3.</span> <span class="nav-text">hexo 指令总汇</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Vivian</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/blog/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/blog/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/blog/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/blog/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+</body>
+</html>
