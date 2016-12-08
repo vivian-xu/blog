@@ -1,10 +1,11 @@
-
+---
 title: Web 存储
 categories:
 - 编程
 tags:
-- 摘抄
+- 抄抄抄
 - JS 基础
+auto_spacing: true
 ---
 
 ### 目的
@@ -21,6 +22,7 @@ tags:
 ##### Storage 类型
 
   Storage 类型提供最大的存储空间, 来存储名值对。( 只能存储字符串，非字符串会在存储前转换成字符串 )
+<!-- more -->
 
   Storage 的实例与其他对象类似，有如下方法。
 
@@ -36,7 +38,6 @@ tags:
 
 其中， getItem(), removeItem(), setItem() 方法可以直接调用，也可以通过 Storage 对象间接调用。
 
-<!-- more -->
 
 因为每个项目都是作为属性存储在该对象上的，所以可以通过 点语法 或者 方括号 访问属性来读取，设置值，或 通过 delete 来删除值。 ( __不建议__ )
 

@@ -4,8 +4,8 @@
 
 # Site 站点
 title: Vivian blog
-subtitle:
-description: 记录，记录，记录！！！
+subtitle: better Me~
+description: 从现在开始
 keywords:
   - HTML
   - JavaScript
@@ -18,7 +18,7 @@ timezone: Asia/Shanghai #时区
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: http://zhangxiaoxu.com #用于绑定域名, 其他的不需要配置
-root: /blog/
+root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 
@@ -92,4 +92,7 @@ menu:
   categories: /categories
   tags: /tags
   #commonweal: /404.html
+
+# baidu anaylaz
+baidu_analytics: a36fb7c2597833dc69c07d45b78570ca
 

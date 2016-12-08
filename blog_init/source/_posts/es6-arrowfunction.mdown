@@ -1,12 +1,14 @@
-title: Arrow Function
+---
+title: 箭头函数
 categories:
 - 编程
 tags:
-- 记录
+- 抄抄抄
 - ES6
+auto_spacing: true
 ---
 
-### ES6中引入了一种编写函数的新语法
+#### 基本定义
 ```
   // ES5
   var selected = allJobs.filter(function (job) {
@@ -19,9 +21,10 @@ tags:
 
 - 当函数只有  __一个参数__ 的时候，可以使用新标准中的箭头函数，它的语法非常简单：标识符=>表达式。你无需输入function和return，一些小括号、大括号以及 __分号__ 也可以省略。
 
+<!-- more -->
+
 - 如果要写一个接受多重参数（也可能没有参数，或者是不定参数、默认参数、参数解构）的函数，你需要用 __小括号__  包裹 __参数list__。
 
-<!-- more -->
 ```
   // ES5
     var total = values.reduce(function (a, b) {
@@ -100,7 +103,7 @@ ES6中的规则是，__紧随__ 箭头的 { 被解析为块的开始，而不是
 ```
 在上面这个对象的 addAll 方法中， 有一个 匿名函数，这个匿名函数是拿不到 外部函数的 this 的 ( 内部 上下文，拿不到 外部的 this, arguments )，而我们需要用 this.add 这个 方法，所以 我们，外部能拿到 this 的地方，将 this 赋值给另一个 内部函数可以访问到 变量, 然后我们在内部函数通过访问这个变量来访问 this.add 方法。
 
-##### 但是用 箭头函数 就不用这么麻烦了。
+__但是用 箭头函数 就不用这么麻烦了。__
 
 ```
   // ES6
@@ -191,9 +194,13 @@ The arrow in an arrow function is not an operator, but arrow functions have spec
 - 通过object.method()语法调用的方法使用非箭头函数定义，这些函数需要从调用者的作用域中获取一个有意义的this值。
 - 其它情况全都使用箭头函数。
 
+{% blockquote %}
+
 参考：
 
 [深入浅出ES6（七）：箭头函数 Arrow Functions
 ](http://www.infoq.com/cn/articles/es6-in-depth-arrow-functions/)
 
 [箭头函数](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
+
+{% endblockquote %}
