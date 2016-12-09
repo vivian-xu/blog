@@ -984,7 +984,7 @@ pre .javascript .function {
   position: relative;
 }
 .headband {
-  height: 3px;
+  height: 0px;
   background: #222;
 }
 .site-meta {
@@ -1680,7 +1680,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff6a40;
+  background: #ffc20e;
 }
 .links-of-author-item {
   display: block;
@@ -2494,4 +2494,9 @@ embed {
 }
 .links-of-blogroll-inline .links-of-blogroll-item {
   display: inline-block;
+}
+my-projects-img {
+  border: none;
+  width: 40%;
+  margin: 10px auto;
 }

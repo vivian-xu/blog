@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="开篇," />
+  <meta name="keywords" content="抄抄抄,JS 基础," />
 
 
 
@@ -90,19 +90,31 @@
 
 
 
-<meta name="description" content="突然想起来应该有个开篇的，于是有了这篇～
-我一直想找个地方把一些东西记下来，一来是填补自己记忆力上的不足( 我是我们家最笨的了 )，二来是培养自己的总结能力。">
+<meta name="description" content="基础知识
+定义了变量或函数有权访问的其他数据，决定了它们各自的行为。
+
+每个执行环境都有一个与之关联的 变量对象，执行环境紫红定义的所有变量和函数都保存在这个对象中。
+
+全局执行环境是最外围的一个执行环境。（在 Web 浏览器中，全局环境是 window 对象，所以所有全局变量和函数都是作为 window 对象的属性和方法创建的 ）">
 <meta property="og:type" content="article">
-<meta property="og:title" content="应该有个开篇的">
-<meta property="og:url" content="http://zhangxiaoxu.com/2016/12/01/start/index.html">
+<meta property="og:title" content="执行上下文">
+<meta property="og:url" content="http://zhangxiaoxu.com/2016/12/05/execution context/index.html">
 <meta property="og:site_name" content="Vivian blog">
-<meta property="og:description" content="突然想起来应该有个开篇的，于是有了这篇～
-我一直想找个地方把一些东西记下来，一来是填补自己记忆力上的不足( 我是我们家最笨的了 )，二来是培养自己的总结能力。">
-<meta property="og:updated_time" content="2016-12-05T05:01:55.000Z">
+<meta property="og:description" content="基础知识
+定义了变量或函数有权访问的其他数据，决定了它们各自的行为。
+
+每个执行环境都有一个与之关联的 变量对象，执行环境紫红定义的所有变量和函数都保存在这个对象中。
+
+全局执行环境是最外围的一个执行环境。（在 Web 浏览器中，全局环境是 window 对象，所以所有全局变量和函数都是作为 window 对象的属性和方法创建的 ）">
+<meta property="og:updated_time" content="2016-12-05T06:33:45.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="应该有个开篇的">
-<meta name="twitter:description" content="突然想起来应该有个开篇的，于是有了这篇～
-我一直想找个地方把一些东西记下来，一来是填补自己记忆力上的不足( 我是我们家最笨的了 )，二来是培养自己的总结能力。">
+<meta name="twitter:title" content="执行上下文">
+<meta name="twitter:description" content="基础知识
+定义了变量或函数有权访问的其他数据，决定了它们各自的行为。
+
+每个执行环境都有一个与之关联的 变量对象，执行环境紫红定义的所有变量和函数都保存在这个对象中。
+
+全局执行环境是最外围的一个执行环境。（在 Web 浏览器中，全局环境是 window 对象，所以所有全局变量和函数都是作为 window 对象的属性和方法创建的 ）">
 
 
 
@@ -130,13 +142,13 @@
 
 
 
-  <link rel="canonical" href="http://zhangxiaoxu.com/2016/12/01/start/"/>
+  <link rel="canonical" href="http://zhangxiaoxu.com/2016/12/05/execution context/"/>
 
 
 
 
 
-  <title> 应该有个开篇的 | Vivian blog </title>
+  <title> 执行上下文 | Vivian blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -277,7 +289,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://zhangxiaoxu.com/2016/12/01/start/">
+  <link itemprop="mainEntityOfPage" href="http://zhangxiaoxu.com/2016/12/05/execution context/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="Vivian">
@@ -301,7 +313,7 @@
             
             
               
-                应该有个开篇的
+                执行上下文
               
             
           </h1>
@@ -314,8 +326,8 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-01T00:00:00+08:00">
-                2016-12-01
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-05T14:31:38+08:00">
+                2016-12-05
               </time>
             
 
@@ -333,8 +345,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/life/" itemprop="url" rel="index">
-                    <span itemprop="name">生活</span>
+                  <a href="/categories/programming/" itemprop="url" rel="index">
+                    <span itemprop="name">编程</span>
                   </a>
                 </span>
 
@@ -368,17 +380,46 @@
       
 
       
-        <p>突然想起来应该有个开篇的，于是有了这篇～</p>
-<p>我一直想找个地方把一些东西记下来，一来是填补自己记忆力上的不足( 我是我们家最笨的了 )，二来是培养自己的总结能力。</p>
+        <h4 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h4><ul>
+<li><p>定义了变量或函数有权访问的其他数据，决定了它们各自的行为。</p>
+</li>
+<li><p>每个执行环境都有一个与之关联的 <strong>变量对象</strong>，执行环境紫红定义的所有变量和函数都保存在这个对象中。</p>
+</li>
+<li><p>全局执行环境是最外围的一个执行环境。（在 Web 浏览器中，全局环境是 window 对象，所以所有全局变量和函数都是作为 window 对象的属性和方法创建的 ）</p>
+</li>
+</ul>
 <a id="more"></a>
-<p>之前有需要记得都是写在本子上的，想着好记性不如烂笔头 ( 况且我还没有好记性 ಠ<em>ರೃ </em> )。 但是，没有一个固定的本子，所以一来二去就记得乱七八糟的。也经常一不小心就不知道把本子弄到哪里去了，于是渐渐地想要写下来的想法就越来越淡了。</p>
-<p>而且讲真，真是一直不喜欢写文章，各种文章。。。 一直以来，写作文是我最不喜欢的事，从来都是把这一类的作业放在最后来做。对于一个喜欢文学，喜欢写诗的老妈来说，我是在这一部分一点都没有继承下来。 不过对于物理，生物，数学这一类，我还是蛮喜欢。</p>
-<p>喜欢归喜欢，但是，大学后经过一些对比，我觉得有些人的思维真是特别适合做物理研究，而我，ಥ_ಥ。</p>
-<p>之前，也不太总结，所以自己的总结能力比较差，曾几次都想着要培养总结能力，后来总是没有然后。</p>
-<p>越来越知道总结是多么的重要。</p>
-<p>现在刚好开始这个博客，想借此机会把自己的总结能力提！上！去！！或许有些晚，但是至少在开始上升！而且不需要多快，稳步前进就可以了。</p>
-<p>期待我的未来会更美好～～～( ´ ▽ <code>)ﾉ</code>)</p>
-<p>现在，从抄抄抄开始！！</p>
+<ul>
+<li><p>某个执行环境中所有的代码执行完成后，该环境被销毁，其中的所有变量，函数定义也被销毁。</p>
+</li>
+<li><p>每个函数都有自己的<strong>执行环境</strong>。当执行流进入一个函数的时候，函数的环境就会被推入到一个<strong>环境栈</strong>中，在函数执行完成后，栈将其环境弹出，把控制权返回给之前的执行环境。</p>
+</li>
+<li><p>当代码在一个环境中执行的时候，会创建<strong>变量对象</strong>的一个<strong>作用域链</strong>。 </p>
+</li>
+<li><p>作用域链的<strong>作用</strong>是保证对执行环境有权访问的所有变量和函数的<strong>有序访问</strong>。</p>
+</li>
+<li><p>作用域链的<strong>前端</strong>，始终都是<strong>当前执行</strong>的代码所在的环境变量对象。</p>
+</li>
+<li><p>如果这个环境是<strong>函数</strong>，则将其<strong>活动对象</strong>作为<strong>变量对象</strong>。</p>
+</li>
+<li><p><strong>活动对象</strong> 最开始只包含一个变量，arguments 对象。</p>
+</li>
+<li><p>作用域链中的下一个变量对象来自包含（外部）环境，而在下一个变量对象则来自下一个包含对象，这样，一直延续道全局执行环境。（全局执行环境的变量始终是作用域链中的最后一个对象）</p>
+</li>
+<li><p>标识符解析是沿着作用域链一级一级地搜索标志符的过程。</p>
+</li>
+<li><p>每个环境都可以向上搜索作用域链，查询变量和函数名，但任何环境都不能通过向下搜索作用域链而静如另一个执行环境。</p>
+</li>
+</ul>
+<h4 id="延长作用域链"><a href="#延长作用域链" class="headerlink" title="延长作用域链"></a>延长作用域链</h4><p>NOTE:! 这里不是很懂</p>
+<ul>
+<li>try-catch 语句的 catch </li>
+<li>with 语句</li>
+</ul>
+<p>这些语句可以在作用域链的前端添加一个变量对象。</p>
+<blockquote><p>参考链接：</p>
+<p><em>JS高级程序设计 ( 第3版 )</em></p>
+</blockquote>
 
       
     </div>
@@ -402,7 +443,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/开篇/" rel="tag"># 开篇</a>
+            <a href="/tags/抄抄抄/" rel="tag"># 抄抄抄</a>
+          
+            <a href="/tags/JS-基础/" rel="tag"># JS 基础</a>
           
         </div>
       
@@ -411,14 +454,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2016/12/05/closure/" rel="next" title="闭包">
+                <i class="fa fa-chevron-left"></i> 闭包
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/12/02/Web-storage/" rel="prev" title="Web 存储">
-                Web 存储 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/12/07/React Review /" rel="prev" title="React 优化">
+                React 优化 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -466,8 +513,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -554,6 +610,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#基础知识"><span class="nav-number">1.</span> <span class="nav-text">基础知识</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#延长作用域链"><span class="nav-number">2.</span> <span class="nav-text">延长作用域链</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
     </div>

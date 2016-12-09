@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="JS 基础,抄抄抄," />
+  <meta name="keywords" content="抄抄抄,JS 基础," />
 
 
 
@@ -108,7 +108,7 @@
 
 
 1234567891011121314function createComparisonFunction(propertyName) &amp;#123;    return function(obj1, obj2) &amp;#123;        var v1 = obj1[propertyN">
-<meta property="og:updated_time" content="2016-12-05T06:23:39.000Z">
+<meta property="og:updated_time" content="2016-12-05T06:26:51.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="闭包">
 <meta name="twitter:description" content="基础知识
@@ -196,7 +196,7 @@
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
-  <p class="site-subtitle">better Me~</p>
+  <p class="site-subtitle">better Me ❤️</p>
 </div>
 
 <div class="site-nav-toggle">
@@ -425,7 +425,7 @@
 <h5 id="当函数执行完后，局部的活动对象就会被销毁，内存中仅保存全局作用域（全局执行环境的变量对象）。-但是，闭包不同。"><a href="#当函数执行完后，局部的活动对象就会被销毁，内存中仅保存全局作用域（全局执行环境的变量对象）。-但是，闭包不同。" class="headerlink" title="当函数执行完后，局部的活动对象就会被销毁，内存中仅保存全局作用域（全局执行环境的变量对象）。  但是，闭包不同。"></a>当函数执行完后，局部的活动对象就会被销毁，内存中仅保存全局作用域（全局执行环境的变量对象）。  但是，闭包不同。</h5><p>在一个函数内部定义的函数将会包含（外部函数）的活动对象添加道它的作用域链中。 因此在第一个例子中，如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">function createComparisonFunction(propertyName) &#123;</div><div class="line">    return function(obj1, obj2) &#123;</div><div class="line">        var v1 = obj1[propertyName]; // 这里两行访问了外部函数的变量</div><div class="line">        var v2 = obj2[propertyName]; // 这里两行访问了外部函数的变量</div><div class="line"></div><div class="line">        if(v1 &lt; v2) &#123;</div><div class="line">            return -1;</div><div class="line">        &#125; else if (v1 &gt; v2) &#123;</div><div class="line">            return 1;</div><div class="line">        &#125; else &#123;</div><div class="line">            return 0;</div><div class="line">        &#125;</div><div class="line">    &#125;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>在 createComparisonFunction() <strong>内部定义</strong>的<strong>匿名函数</strong>的作用域链中，实际上将会包含外部函数 createComparisonFunction() 的活动对象。</p>
-<p>在匿名函数从createComparisonFunction() 中返回后，它的作用域链被初始化为 **包含 createComparisonFunction() 函数的活动对象和全局变量对象。</p>
+<p>在匿名函数从createComparisonFunction() 中返回后，它的作用域链被初始化为 <strong>包含 createComparisonFunction() 函数的活动对象和全局变量对象</strong>。</p>
 <p>这样匿名函数就可以访问在 在匿名函数从createComparisonFunction 中定义的变量了。</p>
 <p>更重要的是 createComparisonFunction 函数在执行完后，其活动对象也不会被销毁，因为<br>匿名函数的作用域链仍然在引用这个活动对象。（也就是说，当createComparisonFunction 函数返回后，其执行环境的作用域链会被销毁，<strong>==但他的活动对象留在了内存中==</strong>，直到匿名函数被销毁。</p>
 <p>例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">// 创建函数</div><div class="line">var compareName = createComparisonFunction(&quot;name&quot;);</div><div class="line"></div><div class="line">// 调用函数</div><div class="line">var result = compareName(&#123;name:&quot;Nicholas&quot;&#125;, &#123;name: &quot;Greg&quot;&#125;);</div><div class="line"></div><div class="line">// 解除对匿名函数的引用 (以便释放内存)</div><div class="line">compareName = null</div></pre></td></tr></table></figure></p>
@@ -451,14 +451,14 @@
 </li>
 <li><p><strong>为什么匿名函数没有取得其外部作用域的 this ?</strong></p>
 </li>
-<li><p>每个函数在被<strong>调用</strong>的时候都会<strong>自动取得</strong>两个特殊<br>变量： <strong>==arguments 和 this==</strong>。</p>
+<li><p>每个函数在被<strong>调用</strong>的时候都会<strong>自动取得</strong>两个特殊<br>变量： <strong>arguments 和 this</strong>。</p>
 </li>
-<li><p>==内部函数在搜索这两个变量时，只会搜索到<strong>其活动对象为止</strong>==，因此永远不可能直接访问到外部函数中的这两个变量。</p>
+<li><p>内部函数在搜索这两个变量时，只会搜索到<strong>其活动对象为止</strong>，因此永远不可能直接访问到外部函数中的这两个变量。</p>
 </li>
-<li><p>不过，如果把外部作用域中的 this 对象保存在一个闭包能够访问到的变量中，就可以让闭包访问该对象了。<br>-</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">var name = &quot;The Window&quot;;</div><div class="line"></div><div class="line">var object = &#123;</div><div class="line">    name: &quot;My Object&quot;,</div><div class="line"></div><div class="line">    getNameFunc: function()&#123;</div><div class="line">        var that = this;</div><div class="line"></div><div class="line">        return function()&#123;</div><div class="line">          return that.name;</div><div class="line">        &#125;;</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">alert(object.getNameFunc()()); // &quot;My Object&quot;</div></pre></td></tr></table></figure>
+<li><p>不过，如果把外部作用域中的 this 对象保存在一个闭包能够访问到的变量中，就可以让闭包访问该对象了。</p>
 </li>
 </ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">var name = &quot;The Window&quot;;</div><div class="line"></div><div class="line">var object = &#123;</div><div class="line">    name: &quot;My Object&quot;,</div><div class="line"></div><div class="line">    getNameFunc: function()&#123;</div><div class="line">        var that = this;</div><div class="line"></div><div class="line">        return function()&#123;</div><div class="line">          return that.name;</div><div class="line">        &#125;;</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">alert(object.getNameFunc()()); // &quot;My Object&quot;</div></pre></td></tr></table></figure>
 <p>我们将  this 对象赋值给了一个名叫 that 的变量。所以在定义了闭包之后，闭包也可以访问这个变量。即使在函数返回了之后，that 也仍然引用着 object ，所以调用 object.getNameFunc()()就返回了 My Object.</p>
 <ul>
 <li>在几种特殊的情况下，this 的值可能会意外地改变。 比如：</li>
@@ -475,7 +475,8 @@
 <blockquote><p>参考：</p>
 <p>JavaScript 高级程序设计</p>
 <p><a href="http://www.cnblogs.com/frankfang/archive/2011/08/03/2125663.html" target="_blank" rel="external">Javascript闭包——懂不懂由你，反正我是懂了</a></p>
-<p><a href="http://www.cnblogs.com/mzwr1982/archive/2012/05/20/2509295.html" target="_blank" rel="external">什么是闭包，我的理解</a><br><a href="http://www.cnblogs.com/xiaotie/archive/2011/08/03/2126145.html" target="_blank" rel="external">什么是闭包，我的理解</a></p>
+<p><a href="http://www.cnblogs.com/mzwr1982/archive/2012/05/20/2509295.html" target="_blank" rel="external">什么是闭包，我的理解</a></p>
+<p><a href="http://www.cnblogs.com/xiaotie/archive/2011/08/03/2126145.html" target="_blank" rel="external">什么是闭包，我的理解</a></p>
 <p><a href="http://www.cnblogs.com/mzwr1982/archive/2012/05/20/2509295.html" target="_blank" rel="external">js中的闭包之我理解</a></p>
 <p><a href="https://www.zhihu.com/question/34547104" target="_blank" rel="external">如何通俗易懂的解释javascript里面的‘闭包’？</a></p>
 <p><a href="http://www.ibm.com/developerworks/cn/web/wa-use-javascript-closures-efficiently/index.html" target="_blank" rel="external">高效使用 JavaScript 闭包</a></p>
@@ -503,9 +504,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/JS-基础/" rel="tag"># JS 基础</a>
-          
             <a href="/tags/抄抄抄/" rel="tag"># 抄抄抄</a>
+          
+            <a href="/tags/JS-基础/" rel="tag"># JS 基础</a>
           
         </div>
       
@@ -523,6 +524,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/12/05/execution context/" rel="prev" title="执行上下文">
+                执行上下文 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -590,7 +595,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">7</span>
+              <span class="site-state-item-count">9</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -607,7 +612,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

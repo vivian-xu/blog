@@ -24,7 +24,7 @@ auto_spacing: true
 
 刚开始的时候纯手写 HTML, 后来用 __Pug__ 编写 ( 开始用的时候感觉真是神器！方便了 n 多！！而且代码感觉整洁了好多～ )
 
-CSS 使用 __SCSS__, 在了解 BEM 命名规则后, 现在更加倾向于 手写 __CSS__ + 少量 __SCSS__
+CSS 使用 __SCSS__, 在了解 BEM 命名规则后, 现在更加倾向于 大量的 __CSS__ + 少量 __SCSS__
 
 刚开始使用 Jquery, 后来上手 原生JS ( 与 React  ) , ES6
 
@@ -34,13 +34,21 @@ mock 工具 暂时使用 __superagent-mock__
 
 构建工具最开始, 使用  gulp, 现在使用 __webpack__
 
-代码管理 __github__, __gitosc__
+代码管理 __github__ ( 之前一段时间用国内的 __码云 (  私有库 )__)
 
-常用 IDE  __Sublime__, 想尝试下 Atom 但是怕卡机 ( 我一般使用都会卡 )
+常用 IDE  __Sublime__, 想尝试下 Atom 但是怕卡机 ( 我一般使用都会卡( 4G 内存 ) )
 
-开发 工具 __mac__
+开发 工具 __MAC__
 
-调试工具 __Chrome__, Safari ( Chrome 死机后用 )
+调试工具 __Chrome__, Safari ( Chrome 卡死后用 )
 
 越学习越知道自己的知识的薄弱, 但是会努力的！！
+  
+     
+---
+想看我具体的项目经历 
+请点击：[我做的项目](/my-projects)
+
+
+
 {% endcq %}
