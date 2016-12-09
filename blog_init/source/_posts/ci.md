@@ -1,5 +1,5 @@
 ---
-title: 从文章到网页的操作流程
+title: 从文章到网页的操作流程以及 CI 设置
 categories:
 - 编程
 tags:

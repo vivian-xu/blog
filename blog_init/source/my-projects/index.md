@@ -15,9 +15,9 @@ date: 2016-12-08 13:34:40
   <li class="my-project-item" >
     <img src="../images/sup-polo.png" class="my-project-img" />
       React 第一个项目
-      [demo 请戳]()
+      [demo 请戳](http://sup-polo.zhangxiaoxu.com)
       [原码请戳](https://github.com/vivian-xu/job-src)
-      第一次用使用 React 开发的项目。虽然开发过程十分曲折，并且代码和结构都很不好，但是经过了这个项目，最终成功的转变了自己的思维模式。
+      第一次用使用 React 开发的项目。虽然开发过程十分曲折，并且代码和结构都很不好，但是经过了这个项目，进一步的理解了 react 的理念。也进一步喜欢上了 React，它可以使我的思维更加有条理。
       这个项目也是第一真正的与后端对接代码，虽然第一次对接的过程也不是很顺利，但是充分的了解到了与后端共同制定 API 的重要性以及 mock 的重要性。
       使用 __webpack__ 打包构建，__React__ + __React-router__, __Sass__ 编写 CSS , __Jquery__。
   </li>
@@ -30,13 +30,13 @@ date: 2016-12-08 13:34:40
       这个项目是比较简单的项目，相对于第一个 React 来说更得心应手了。
       在这个项目上努力使自己的代码更加规范，整洁，结构更加的合理，并且尽量使性能更优。将组件更细分，储存在 state 里的变量尽量减少，利用 PureComponent 减少不必要的 Mount 等等。
       为了改善用户体验，加入 Loading 和 无限滚动加载等小组件。
-      使用 __webpack__ 打包构建，__React__ + __React-router__, __原生 JS + ES6, 用 __superagent-mock__ mock 数据 ,____Sass__ 编写 CSS ,
+      使用 __webpack__ 打包构建，__React__ + __React-router__, __原生 JS + ES6, 用 __superagent-mock__ mock 数据 ,____Sass__ 编写 CSS
   </li>
   <li class="my-project-item">
     <img src="../images/sup-shop.jpeg" class="my-project-img" />
-      首次尝试 Vue.js
+      首次尝试 Vue.js，这个是跟一个比较有经验的前端工程师合作写的。但是其实我是以学习为主，所以最终我也没有写多少行，但是我认真的读了他的代码 ( 环境配置没太看, 其实是没太看懂 )
 
-      [原码请戳](https://github.com/vivian-xu/job-src)
+      [原码请戳](https://github.com/vivian-xu/sup-shop-src)
 
        这个项目是用 Vue 开发的。
   </li>
