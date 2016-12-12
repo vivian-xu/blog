@@ -56,3 +56,11 @@ date: 2016-12-08 13:34:40
       使用 __gulp__ 构建， __Sass__ 编写 CSS , 加入少量 weui 实现的。
   </li>
 </ul>
+
+<p>
+  联系我
+</p>
+<p>
+  Email: hi@zhangxiaoxu.com
+
+</p>

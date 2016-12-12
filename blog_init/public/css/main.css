@@ -1680,7 +1680,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ffc20e;
+  background: #e5447c;
 }
 .links-of-author-item {
   display: block;
@@ -2495,8 +2495,28 @@ embed {
 .links-of-blogroll-inline .links-of-blogroll-item {
   display: inline-block;
 }
-my-projects-img {
+.my-projects-list {
+  padding: 0;
+  width: 100%;
+  list-style: none;
+}
+.my-project-item {
+/*display: inline-block;*/
+/*display: flex;*/
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 700px;
+  padding: 10px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.07);
+  border-radius: 4px;
+  text-align: center;
+}
+.my-project-img {
+  width: 70%;
   border: none;
-  width: 40%;
-  margin: 10px auto;
+  border-radius: 4px;
+/*margin: 10px auto;*/
+}
+.my-project-img.big-img {
+  width: 100%;
 }
