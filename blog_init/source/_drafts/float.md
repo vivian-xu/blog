@@ -14,7 +14,7 @@ float 阻挡了 inline 但却没有阻挡 block
 
 <!--   Box-3 -->
 <div style="width: 100px; height: 100px; background-color: lightblue; margin: 40px 0; font-size: 20px;" >
-  <div style="background-color: teal; width: 90px; height: 50px; color: #fff; " > </div>
+  <div style="background  -color: teal; width: 90px; height: 50px; color: #fff; " > </div>
   <span style="background-color: #47cf73; padding: 5px; font-size: 12px;" >Box-3 inner inline span</span>
 </div>
 

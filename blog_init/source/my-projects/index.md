@@ -26,6 +26,7 @@ date: 2016-12-08 13:34:40
       React 第二个项目
 
       [原码请戳](https://github.com/vivian-xu/job-src)
+      [demo](http://shifu.zhangxiaoxu.com)
 
       这个项目是比较简单的项目，相对于第一个 React 来说更得心应手了。
       在这个项目上努力使自己的代码更加规范，整洁，结构更加的合理，并且尽量使性能更优。将组件更细分，储存在 state 里的变量尽量减少，利用 PureComponent 减少不必要的 Mount 等等。
@@ -53,7 +54,7 @@ date: 2016-12-08 13:34:40
       相对于上一个版本来说，有了专业的设计师开发更加愉快～
       项目依旧需要适配基本的手机端。
       基本上纯静态页面，加入了少量的 Jquery。
-      使用 __gulp__ 构建， __Sass__ 编写 CSS , 加入少量 weui 实现的。
+      使用 __gulp__ 构建,  __Sass__ 编写 CSS , 加入少量 weui 实现的。
   </li>
 </ul>
 
