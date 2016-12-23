@@ -1,2 +1,5 @@
 /blog_init/node_modules
 **.log
+/blog_init/public/*
+/blog_init/source/_drafts/*
+
