@@ -232,5 +232,8 @@ transform-origin就是一个语法糖。你可以使用translate()替代。—�
 
 [demo](https://jsfiddle.net/vivian_xu/r91j1wc8/3/#&togetherjs=Rk7DRlE27r)
 
-3. 
+3. JS 执行进程 && promise
+在网上查找相关信息，发现 _JavaScript 高级程序设计_ 里有讲一点这一部分，在 __高级技巧__ 中的 _高级定时器_ !
+
+简单来说，是 JS 是运行在单线程的环境中，它的进程会阻塞其他的页面处理，所以必须有小间隔来防止用户界面被锁定。( 代码长时间运行中可能出现 )
 
