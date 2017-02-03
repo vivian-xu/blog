@@ -1,5 +1,5 @@
 ---
-title: promise
+title: new promise
 categories:
 - 编程
 tags:
@@ -12,35 +12,28 @@ auto_spacing: true
 
 ### 定义
 
-所谓 Promise, 简单说就是一个容器。里面保存着某个 __未来__才会 _结束的事件_ ( 通常是一个异步操作 ) 的 __结果__。
+Promise 是对异步编程的一种抽象。它是一个代理对象，代表一个必须进行异步处理的函数 __返回的值或抛出的异常__。
 
 - Promise 对象是一个 __返回值的代理__，这个返回值在 promise 对象创建时未必已知。
 
 - 它允许你为异步操作的成功返回值 ／ 失败信息指定处理方法。
 
-- 这使异步方法可以像同步方法那样返回值： 异步方法会返回一个包含原返回值的 promise 对象来替代原返回值
+- 这使异步方法可以像同步方法那样返回值 ( 防止 Callback Hell, 深入了解请点击[这里](http://callbackhell.com))： 异步方法会返回一个包含原返回值的 promise 对象来替代原返回值。
 
 <!-- more -->
-Promise 对象有以下几种状态：
+Promise 对象有以下 3 种状态：
 
 - pending
-- fufilled 成功的操作
-- rejected 失败的操作
+- fufilled
+- rejected
 
-pending 可转换带着 __一个成功值的 fulfilled 状态__,
-也可变成一个 __带着失败信息的 rejected 状态__
+pending 可转换成带着 __一个成功值的 fulfilled 状态__, 或者一个 __带着失败信息的 rejected 状态__。
 
-- 当状态发生转换的时候， promise.then 绑定的方法就会被调用
-
-- 当绑定方法时， promise 对象已经处于 fulfilled / rejected 状态，则相应的方法会被 __立刻调用__
+- 当 promise 对象处于 fulfilled / rejected 状态，则promise.then 绑定的相应的方法就会被__立刻调用__
 
 - 一个 promise 对象处在 fulfilled ／ rejected 状态时它也可以被称为 settled  状态。 ( resolved 表示 promise 对象处于 settled  状态，或 promise 对象被 __锁定__在调用链中 )
 
-- 因为 Promise.prototype.then 和 Promise.prototype.catch 方法 __返回 promises  对象__，所以它们可以被链式调用
-
-
-
-
+- Promise.prototype.then 和 Promise.prototype.catch 方法 __返回 promises  对象__，即它们可以被链式调用
 
 ### 语法
 
@@ -50,12 +43,14 @@ new Promise(function(resolve, reject) {...} );
 参数：
 executor
 
-- 函数
-- 默认有 resolve, reject 两个参数
-- 在创建 Promise 对象的时候会 __立即执行__ ( 在 Promise 构造函数返回 Promise 对象之前就会被执行 )
-- 调用 resolve 和 reject 函数会分别触发  promise 的成功或者 失败。
-- 这个函数参数 通常被用来执行一些异步操作，操作完成后可以选择 调用 resolve 来触发 promise 的成功状态，或者，在出现错误的时候调用 reject 函数来触发 promise 的失败。
+- 函数 ( 默认有 resolve, reject 两个参数 )
 -
+- 在创建 Promise 对象的时候会 __立即执行__ ( 在 Promise 构造函数返回 Promise 对象之前就会被开始执行 )
+
+- 调用 resolve 和 reject 函数会分别触发  promise 的成功( fulfilled ) 或者 失败 ( rejected )
+
+- 这个函数参数 通常被用来执行一些异步操作，操作完成后可以选择 调用 resolve 来触发 promise 的成功状态，或者，在出现错误的时候调用 reject 函数来触发 promise 的失败。
+
 ### 属性
 
 - Promise.prototype 表示 Promise 构造器的原型
@@ -77,26 +72,69 @@ executor
 当 iterable 参数里的任意一个 promise 被成功或失败后，
 父 promise 也会马上用子 promise 的成功返回值 或失败详情作为参数调用 父 promise 绑定的相应句柄, 并返回该 promise 对象。
 
-NOTE !!! ： __这个是 promises ---> Promise.all  实现的原理__
-
-- Promise.reject( reason )
-
-返回一个 因为 reason 而被拒绝 (rejected) 的 Promise 对象
-
 - Promise.resolve( value )
 
-  + Returns a _Promise_ object that is resolved with the given value .  ( fulfill )
+  + 返回一个 _Promise_ 对象 ( 可以将现有的对象转化为 Promise 对象 )。
 
-  + 如果该 value 为 thenable ( 带有 then 方法 )
+  + 如果参数 __不是__ 一个 Promise 对象，则返回的新的 状态为 fulfilled 的 Promise 对象。并且，Promise.resolve 的参数也是 then 的回调函数的参数。
 
-      - 返回的 Promise 对象会 "跟随" 这个value 并采用这个 value 的最终状态
+    ```
+    let secondPromiseT = Promise.resolve('resolve');
+    secondPromiseT.then(data => {
+      console.log(data);     // 'resolve'
+    })
 
-  +  value 没有带 then 方法,  返回的 Promise will be fulfilled with the value
+    ```
 
-  +  如果你不知道 value 是不是一个 promise, Promise.resolve( value )  it instead and work with the return value as a promise.
+  + 如果参数 __是__ 一个的 Promise (thenable) 对象，则返回的新的 Promise 对象 与 参数 Promise 的状态相同的 。
+  新的 Promise 对象的状态为 fulfilled 时，then 的参数是原 Promise 中调用 resolve 函数的参数。
+  新的 Promise 对象的状态为 rejected 时，then 的参数是 原 Promise。
 
-👆没有理解!! 看例子。。
---
+    ```
+    let secondPromiseT = Promise.resolve('resolve');
+
+    let arguPromise = Promise.resolve(secondPromiseT);
+    arguPromise.then(data => {
+      console.log(data);   // 'resolve'
+    });
+
+    ```
+
+  + 如果参数 __是__ 一个 thenable ( 即带有then方法 ) 的对象，则返回的 __新的 Promise__ 与 原 Promise 的最终状态相同。
+
+    fulfilled 状态
+    ```
+    let thenableF = {
+      then: function(resolve) {
+        resolve("RESOLVE");
+      }
+    }
+
+    let arguThen = Promise.resolve(thenableF);
+
+    arguThen.then(data => {
+      console.log(data);    // "RESOLVE"
+    })
+    ```
+
+    rejected 状态 ( 不是 用的 reject )
+    ```
+    let thenableF = {
+      then: function(resolve) {
+        throw new TypeError("Throwing");
+      }
+    }
+
+    let arguThenF = Promise.resolve(thenableF);
+
+    arguThenF.then(null, data => {
+      console.log(data);    // [object Error] { ... }
+    })
+    ```
+
+
+- Promise.reject( value )
+  + 返回一个状态 为 __rejected__ 的, 新的 Promise 对象 ( 状态一定是 rejected )。  其他的基本上与 resolve 刚好相反。
 
 ### Promise prototype
 #### 属性
@@ -122,11 +160,11 @@ NOTE !!! ： __这个是 promises ---> Promise.all  实现的原理__
 
     + 向当前的 promise 添加处理 fulfillment and rejection 的函数 onFulfiles, onRejected
 
-    + 并且 ( 这个 then 函数 ) 返回一个_新的 promise _
+    + 返回一个_新的 promise _
 
-    + 这个_新的 promise_ 解析 (resolving ) 处理函数 ( onFufilled / onRejected ) 的 返回值
+    + 如果两个参数都被省略，或提供的不是函数，那么将创建一个没有其他处理程序的新 Promise。 这个新的 Promise 采用原 Promise 的最终状态。
 
-    + 或者 如果这个 promise 没有被处理 , _这个新的 promise_ 解析成 它原来的 settled 值。 ( 比如说，相关的处理程序 onFulfilled 或者 onRejected 不是一个函数 )
+    + 如果某个参数都被省略，或提供的不是函数，那么将创建一个相应处理程序的新 Promise。 这个新的 Promise 采用原 Promise 的最终状态。
 
 ```
 let promiseCount = 0;
@@ -229,7 +267,6 @@ foo
 ```
 <br/>
 <br/>
-
 
 {% blockquote %}
 参考：
