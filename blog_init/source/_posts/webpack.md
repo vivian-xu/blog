@@ -61,7 +61,7 @@ module.exports = {
   devtool: 'eval-source-map',
   // 这个是和 webpack-dev-derver 结合起来用的
   entry: [
-    'webpack-dev-server/client?http:/localhost:' + PORT,
+    'webpack-dev-server/client?http://localhost:' + PORT,
     'webpack/hot/only-dev-server',
     './src/index.js'
   ],
